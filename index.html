@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1 , user-scalable=no">
+
+    <title>OMDB</title>
+<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Rubik:300,400" rel="stylesheet">
+   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+    <link href="style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+</head>
+
+<body>
+ 
+ <!-- NAV BAR -->
+  
+   <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <a class="navbar-brand" href="#"><span><img src="icon.jpg" width='100'></span><span style="color:#fff; margin-left:5%; font-family:Pacifico ; word-spacing:5px">MovieZone</span></a>
+  
+</nav>
+  
+  
+   <!-- Image and text -->
+
+    <div class="container-fluid color sample">
+        <h3 class="text-center">
+
+            <b class="display-4">Welcome To Movie Mania </b>
+        </h3>
+        <h4 class="text-center sub-heading display-4">One Place to Find Everything About Shows</h4>
+        <form id="searchForm">
+            <input type="text" class="form-control" id="searchText" placeholder="Enter Movie Name...">
+            <br>
+            <h2>Search Style:</h2>Name:
+            <input type="radio" id="byName" name="radioGroup" value="Name" checked="checked"> &emsp; IMDB ID:
+            <input type="radio" id="byIMDBId" name="radioGroup" value="IMDB ID">
+        </form>
+        <br>
+        <div class="text-center">
+            <button id="searchBtn" class="btn btn-lg btn-primary">SEARCH</button>
+        </div>
+
+        <div class="text-center">
+            <div class="card" id="cardWithData"></div>
+        </div>
+
+        <br>
+        <br>
+
+
+        <div class="text-center">
+            <div class="cardCustom">
+
+                <div class="row" id="movieDetails">
+
+                    <div id="moviePoster" class="col-sm-12 col-lg-4 col-xs-12 col-md-4 text-center animated sildeInLeft "></div>
+
+                    <div class="col-sm-8 animated sildeInLeft bg-dark">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-12 col-xs-12 col-md-12 text-center" id="title"></div>
+                        </div>
+                        <br>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4 col-xs-4 col-md-4 movieFont">
+                                <p>
+                                    <b>Release Date</b>
+                                </p>
+                            </div>
+                            <div class="col-s col-lg-8 col-xs-8 col-md-8m-8 movieFont" id="release">
+                                <p>N/A</p>
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4 col-xs-4 col-md-4 movieFont">
+                                <p>
+                                    <b>Director</b>
+                                </p>
+                            </div>
+                            <div class="col-sm-8 m col-lg-8 col-xs-8 col-md-8 movieFont" id="director">
+                                <p>N/A</p>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4 col-xs-4 col-md-4 movieFont">
+                                <p>
+                                    <b>IMDB Rating</b>
+                                </p>
+                            </div>
+                            <div class="col-sm- col-lg-8 col-xs-8 col-md-8 movieFont" id="imdbRating">
+                                <p>N/A</p>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4 col-xs-4 col-md-4 movieFont">
+                                <p>
+                                    <b>IMDB ID</b>
+                                </p>
+                            </div>
+                            <div class="col-sm-8 mo col-lg-8 col-xs-8 col-md-8 movieFont" id="imdbId">
+                                <p>N/A</p>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4 col-xs-4 col-md-4 movieFont">
+                                <p>
+                                    <b>Awards</b>
+                                </p>
+                            </div>
+                            <div class="col-sm-8 mov col-lg-8 col-xs-8 col-md-8 movieFont" id="awards">
+                                <p>N/A</p>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4 col-xs-4 col-md-4 movieFont">
+                                <P>
+                                    <b>Actor</b>
+                                </P>
+                            </div>
+                            <div class="col-sm-8 col-lg-8 col-xs-8 col-md-8  movieFont" id="actor">
+                                <p>N/A</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4 col-xs-4 col-md-4 movieFont">
+                                <P>
+                                    <b>Country</b>
+                                </P>
+                            </div>
+                            <div class="col-sm-8 col-lg-8 col-xs-8 col-md-8  movieFont" id="Country">
+                                <p>N/A</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4 col-xs-4 col-md-4 movieFont">
+                                <P>
+                                    <b>Language</b>
+                                </P>
+                            </div>
+                            <div class="col-sm-8 col-lg-8 col-xs-8 col-md-8  movieFont" id="language">
+                                <p>N/A</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4 col-xs-4 col-md-4 movieFont">
+                                <P>
+                                    <b>Runtime</b>
+                                </P>
+                            </div>
+                            <div class="col-sm-8 col-lg-8 col-xs-8 col-md-8  movieFont" id="Runtime">
+                                <p>N/A</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4 col-xs-4 col-md-4 movieFont">
+                                <P>
+                                    <b>Writer</b>
+                                </P>
+                            </div>
+                            <div class="col-sm-8 col-lg-8 col-xs-8 col-md-8  movieFont" id="Writer">
+                                <p>N/A</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4 col-xs-4 col-md-4 movieFont">
+                                <P>
+                                    <b>Metascore</b>
+                                </P>
+                            </div>
+                            <div class="col-sm-8 col-lg-8 col-xs-8 col-md-8  movieFont" id="Metascore">
+                                <p>N/A</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4 col-xs-4 col-md-4 movieFont">
+                                <P>
+                                    <b>Plot</b>
+                                </P>
+                            </div>
+                            <div class="col-sm-8 col-lg-8 col-xs-8 col-md-8  movieFont" id="Plot">
+                                <p>N/A</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4 col-xs-4 col-md-4 movieFont">
+                                <P>
+                                    <b>Rated</b>
+                                </P>
+                            </div>
+                            <div class="col-sm-8 col-lg-8 col-xs-8 col-md-8  movieFont" id="Rated">
+                                <p>N/A</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4 col-xs-4 col-md-4 movieFont">
+                                <P>
+                                    <b>Type</b>
+                                </P>
+                            </div>
+                            <div class="col-sm-8 col-lg-8 col-xs-8 col-md-8  movieFont" id="Type">
+                                <p>N/A</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4 col-xs-4 col-md-4 movieFont">
+                                <P>
+                                    <b>Year</b>
+                                </P>
+                            </div>
+                            <div class="col-sm-8 col-lg-8 col-xs-8 col-md-8  movieFont" id="Year">
+                                <p>N/A</p>
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4 col-xs-4 col-md-4 movieFont">
+                                <P>
+                                    <b>ImdbVotes</b>
+                                </P>
+                            </div>
+                            <div class="col-sm-8 col-lg-8 col-xs-8 col-md-8  movieFont" id="imdbVotes">
+                                <p>N/A</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4 col-xs-4 col-md-4 movieFont">
+                                <P>
+                                    <b>TotalSeasons</b>
+                                </P>
+                            </div>
+                            <div class="col-sm-8 col-lg-8 col-xs-8 col-md-8  movieFont" id="totalSeasons">
+                                <p>N/A</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4 col-xs-4 col-md-4 movieFont">
+                                <P>
+                                    <b>Genre</b>
+                                </P>
+                            </div>
+                            <div class="col-sm-8 col-lg-8 col-xs-8 col-md-8  movieFont" id="genre">
+                                <p>N/A</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4 col-xs-4 col-md-4 movieFont">
+                                <P>
+                                    <b>IMDB</b>
+                                </P>
+                            </div>
+                            <div class="col-sm-8 col-lg-8 col-xs-8 col-md-8  movieFont" id="imdb">
+                                <p>N/A</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4 col-xs-4 col-md-4 movieFont">
+                                <P>
+                                    <b>Rotten Tomatoes</b>
+                                </P>
+                            </div>
+                            <div class="col-sm-8 col-lg-8 col-xs-8 col-md-8  movieFont" id="rottenTomatoes">
+                                <p>N/A</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4 col-xs-4 col-md-4 movieFont">
+                                <P>
+                                    <b>Metacritic</b>
+                                </P>
+                            </div>
+                            <div class="col-sm-8 col-lg-8 col-xs-8 col-md-8  movieFont" id="metaCritic">
+                                <p>N/A</p>
+                            </div>
+                        </div>
+
+
+
+                        <br>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <script type="text/javascript" src="script.js"></script>
+
+
+</body>
+
+</html>

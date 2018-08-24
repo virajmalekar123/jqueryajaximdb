@@ -1,0 +1,99 @@
+*{
+margin: 0;
+    padding: 0;
+}
+h2{
+ color: #fff;
+ font-family: 'Rubik', sans-serif;
+}
+
+h3 {
+  font-size: 40px;
+  font-family:'Rubik';
+padding: 5% 0 5% 0;
+    font-weight: 300;
+  color: #32aaa1;
+    text-transform: uppercase;
+    
+}
+
+.title {
+  font-size: 20px;
+}
+
+p {
+  font-size: 20px;
+}
+.sub-heading{
+color: #fff;
+}
+.image {
+  border-radius: 7%;
+  border: 1px solid #8a4419;
+  border-style: inset;
+  margin: 3em;
+  width: 70%;
+}
+#searchForm {
+    margin-top: 5%;
+  text-align: center;
+    color: #fff;
+}
+#moviePoster {
+  padding-top: 4%;
+}
+
+.movieFont {
+    
+  font-size: 1.5rem;
+  font-family: 'Rubik';
+  color: #fff;
+    font-weight: 300;
+    text-align: left;
+}
+
+.color {
+ background-image: linear-gradient(rgba(0, 0, 0, 0.69), rgba(0, 0, 0, 0.79)),url("cover.jpg");
+   
+}
+
+.cardCustom {
+  z-index: -100;
+  border-radius: 20px;
+background-color:#ffffff;
+  width: 98%;
+  height: 90%;
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+  -webkit-box-shadow: -1px 9px 21px -3px rgba(97, 97, 97, 0.65);
+  -moz-box-shadow: -1px 9px 21px -3px rgba(97, 97, 97, 0.65);
+  box-shadow: -1px 9px 21px -3px rgba(97, 97, 97, 0.65);
+}
+
+#movieDetails {
+  z-index: 0;
+}
+
+/* card */
+
+.card {
+  margin: auto;
+  border: 16px solid #f3f3f3;
+  /* Light grey */
+  border-top: 16px solid #3498db;
+  /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
